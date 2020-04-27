@@ -95,8 +95,6 @@
     <!-- Radius of the software rounded corners. -->
     <dimen name="rounded_corner_radius">157px</dimen>
 
-   <bool name="config_fingerprintRemoveClientOnCancel">true</bool>
-
     <!-- Adjustment for software rounded corners since corners aren't perfectly round. -->
     <dimen name="rounded_corner_radius_adjustment">25px</dimen>
 </resources>
