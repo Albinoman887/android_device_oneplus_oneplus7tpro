@@ -96,7 +96,7 @@ on early-boot
     chown system system /persist/sensors/registry/registry/sensors_registry
     chown system system /persist/sensors/sensors_settings
     chown system system /persist/sensors/registry/config
-    chmod 0664 /persist/sensors/sensors_settings
+    chmod 0666 /persist/sensors/sensors_settings
 
     chown system system /mnt/vendor/persist/sensors
     chown system system /mnt/vendor/persist/sensors/sns.reg
@@ -108,10 +108,10 @@ on early-boot
     chown system system /mnt/vendor/persist/sensors/registry/sns_reg_config
     chown system system /mnt/vendor/persist/sensors/registry/sns_reg_version
     chown system system /mnt/vendor/persist/sensors/registry/config
-    chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
+    chmod 0666 /mnt/vendor/persist/sensors/sensors_settings
 
     chown system system /mnt/vendor/persist/data/pfm/licenses
-    chmod 0775 /mnt/vendor/persist/data/pfm/licenses
+    chmod 0777 /mnt/vendor/persist/data/pfm/licenses
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
@@ -231,15 +231,15 @@ on boot
 
     # Create directory used for display
     # for backward compatibility
-    mkdir /persist/display 0770 system graphics
-    mkdir /mnt/vendor/persist/display 0770 system graphics
+    mkdir /persist/display 0777 system graphics
+    mkdir /mnt/vendor/persist/display 0777 system graphics
 
     # Create vpp directory
-    mkdir /mnt/vendor/persist/vpp 0770 media media
+    mkdir /mnt/vendor/persist/vpp 0777 media media
 
 
     # Create hvdcp_opti directory
-    mkdir /mnt/vendor/persist/hvdcp_opti 0770 root system
+    mkdir /mnt/vendor/persist/hvdcp_opti 0777 root system
 
     #sensors log dir
     mkdir /data/vendor/sensors
@@ -317,7 +317,7 @@ on post-fs-data
     # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
     # We chown/chmod /persist again so because mount is run as root + defaults
     chown root system /persist
-    chmod 0771 /persist
+    chmod 0777 /persist
     chown system system /persist/WCNSS_qcom_wlan_nv.bin
     chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
